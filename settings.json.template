@@ -5,15 +5,15 @@
 */
 {
   // name your instance!
-  "title": "IQUIDUS",
+  "title": "CPUchain Explorer",
 
-  "address": "127.0.0.1:3001",
+  "address": "https://explorer.cpuchain.org",
 
   // coin name
-  "coin": "Darkcoin",
+  "coin": "CPUchain",
 
   // coin symbol
-  "symbol": "DRK",
+  "symbol": "CPU",
 
   // logo
   "logo": "/images/logo.png",
@@ -25,19 +25,19 @@
 
   // Uses bootswatch themes (http://bootswatch.com/)
   // Valid options:
-  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Litera, Lumen, 
-  //     Lux, Materia, Minty, Pulse, Sandstone, Simplex, Sketchy, Slate, 
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Litera, Lumen,
+  //     Lux, Materia, Minty, Pulse, Sandstone, Simplex, Sketchy, Slate,
   //     Solar, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
-  "theme": "Cyborg",
+  "theme": "Cosmo",
 
   // port to listen for requests on.
   "port" : 3001,
 
   // database settings (MongoDB)
   "dbsettings": {
-    "user": "iquidus",
-    "password": "3xp!0reR",
+    "user": "",
+    "password": "",
     "database": "explorerdb",
     "address": "localhost",
     "port": 27017
@@ -49,17 +49,17 @@
   "block_parallel_tasks": 1,
 
   // wallet settings
-  "use_rpc": false,
+  "use_rpc": true,
 
   "wallet": {
     "host": "localhost",
-    "port": 9332,
+    "port": 19707,
     "username": "darkcoinrpc",
     "password": "123gfjk3R3pCCVjHtbRde2s5kzdf233sa"
   },
 
   // confirmations
-  "confirmations": 40,
+  "confirmations": 0,
 
   // language settings
   "locale": "locale/en.json",
@@ -85,7 +85,7 @@
   "index": {
     "show_hashrate": true,
     // Show Market Cap in header
-    "show_market_cap": false,
+    "show_market_cap": true,
     // Show Market Cap in place of price box
     "show_market_cap_over_price": false,
     "difficulty": "POW",
@@ -96,20 +96,20 @@
   // ensure links on API page are valid
   "api": {
     "blockindex": 1337,
-    "blockhash": "1733320247b15ca2262be646397d1ffd6be953fa638ebb8f5dcbb4c2b91b34f1",
-    "txhash": "f270cd3813254c9922a2e222a56ba745842d9112223a1394062e460b33d27b7e",
-    "address": "RBiXWscC63Jdn1GfDtRj8hgv4Q6Zppvpwb"
+    "blockhash": "0000003781eb4d5090ac415d3559520aeac5fccd2c1c4b21f6f309b53d18dbff",
+    "txhash": "40790cbd66dc625a3013a80b4b86b11ca54434a7d1e32c3652ed1cbabaf773e2",
+    "address": "CczerH2hFRm8RjWtvryJJRjPVXi3ofE5DD"
   },
 
   // market settings
   //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, ccex
   //default market is loaded by default and determines last price in header
   "markets": {
-    "coin": "JBS",
+    "coin": "CPU",
     "exchange": "BTC",
-    "enabled": ["bittrex"],
+    "enabled": ["crex", "dovewallet", "altmarkets"],
     "ccex_key" : "Get-Your-Own-Key",
-    "default": "bittrex"
+    "default": "crex"
   },
 
   // richlist/top100 settings
@@ -123,26 +123,26 @@
   // low flag: greater than this value flagged yellow
   // high flag: greater than this value flagged red
   "movement": {
-    "min_amount": 100,
-    "low_flag": 1000,
-    "high_flag": 5000
+    "min_amount": 20000,
+    "low_flag":  50000,
+    "high_flag": 100000
   },
 
   // twitter, facebook, googleplus, youtube
-  "twitter": "iquidus",
+  "twitter": "cpuchain",
   "facebook": "yourfacebookpage",
   "googleplus": "yourgooglepluspage",
   "youtube": "youryoutubechannel",
 
   //genesis
-  "genesis_tx": "65f705d2f385dc85763a317b3ec000063003d6b039546af5d8195a5ec27ae410",
-  "genesis_block": "b2926a56ca64e0cd2430347e383f63ad7092f406088b9b86d6d68c2a34baef51",
+  "genesis_tx": "843757e79673895b776eea4aad22592ca804b43667a58c1919e36260f1a04690",
+  "genesis_block": "000024d8766043ea0e1c9ad42e7ea4b5fdb459887bd80b8f9756f3d87e128f12",
 
   //heavy (enable/disable additional heavy features)
   "heavy": false,
 
   //disable saving blocks & TXs via API during indexing.
-  "lock_during_index": false,
+  "lock_during_index": true,
 
   //amount of txs to index per address (stores latest n txs)
   "txcount": 100,
@@ -157,7 +157,7 @@
   // HEAVY: retreive from heavys getsupply api call
   // BALANCES : total of all address balances
   // TXOUTSET : retreive from gettxoutsetinfo api call
-  "supply": "COINBASE",
+  "supply": "BALANCES",
 
   // how to acquire network hashrate
   // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
@@ -166,7 +166,7 @@
 
   // nethash unitd: sets nethash API return units
   // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
-  "nethash_units": "G",
+  "nethash_units": "M",
 
   // Address labels
   // example : "JhbrvAmM7kNpwA6wD5KoAsbtikLWWMNPcM": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
@@ -174,7 +174,5 @@
   // type (optional) = class of label, valid types: default, primary, warning, danger, success
   // url (optional) = url to link to for more information
   "labels": {
-  //  "JSoEdU717hvz8KQVq2HfcqV9A79Wihzusu": {"label": "Developers address", "type":"primary", "url":"http://example.com"},
-  //  "JSWVXHWeYNknPdG9uDrcBoZHztKMFCsndw": {"label": "Cryptsy"}
   }
 }

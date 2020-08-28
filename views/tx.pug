@@ -79,10 +79,10 @@ block content
                           a.loading(href='/address/' + r.addresses) 
                             =r.addresses
                         td.table-danger.d-xs-none #{ramountParts[0]}.
-                          span.decimal #{ramountParts[1]}
+                          span #{ramountParts[1]}
                       tr.d-lg-none.d-md-none
                           td.table-danger #{ramountParts[0]}.
-                            span.decimal #{ramountParts[1]} #{settings.symbol}
+                            span #{ramountParts[1]} #{settings.symbol}
                 else
                   tr.table-info(style='text-align:center')
                     td #{settings.locale.proof_of_stake}
@@ -105,10 +105,10 @@ block content
                         a.loading(href='/address/'+r.addresses) 
                           =r.addresses 
                       td.success.d-none.d-sm-block  #{ramountParts[0]}.
-                        span.decimal #{ramountParts[1]}
+                        span #{ramountParts[1]}
                     tr.d-sm-block.d-md-none.d-none
                       td.success #{ramountParts[0]}.
-                            span.decimal #{ramountParts[1]} #{settings.symbol}
+                            span #{ramountParts[1]} #{settings.symbol}
                   else
                     - var ramount = (r.amount / 100000000).toLocaleString('en',{'minimumFractionDigits':2,'maximumFractionDigits':8,'useGrouping':true})
                     - var ramountParts = ramount.split('.')
@@ -117,8 +117,8 @@ block content
                       a.loading(href='/address/' + r.addresses) 
                         =r.addresses 
                     td.table-success.d-none.d-md-block  #{ramountParts[0]}.
-                        span.decimal #{ramountParts[1]}
+                        span #{ramountParts[1]}
                   tr.d-sm-block.d-md-none.d-none
                     td.table-success #{ramountParts[0]}.
-                            span.decimal #{ramountParts[1]} #{settings.symbol}
+                            span #{ramountParts[1]} #{settings.symbol}
     .footer-padding
